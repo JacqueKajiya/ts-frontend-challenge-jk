@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   *{
@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-primary: #2D3748;
     --color-secondary: #4A5568;
 
-    --color-text-white: #F7FAFC;
+    --color-white: #F7FAFC;
     --color-input-placeholder: #A0AEC0;
 
     --negative: #F56565;
