@@ -1,20 +1,17 @@
-import React from "react";
+import { FormEvent } from "react";
 import { StyledForm } from "./styled";
 
 interface IFormProps {
   title?: string;
-  submitCallback?: () => void;
-  href?: string;
-  hrefTitle?: string;
+  onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
   children?: React.ReactNode;
 }
 
-export const Form = ({ title, submitCallback, href, hrefTitle, children }: IFormProps) => {
-  <StyledForm onSubmit={submitCallback}>
+export const Form = ({ title, onSubmit, children }: IFormProps) => {
+  return (<StyledForm onSubmit={onSubmit} autoComplete="off">
     <header>
       <h1>{title}</h1>
-      <a href={href}>{hrefTitle}</a>
     </header>
     {children}
-  </StyledForm>
+  </StyledForm>)
 }

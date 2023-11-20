@@ -1,10 +1,10 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { StyledAuthBackground, StyledAuthContainer } from "../../styles/AuthBackground"
 import { IAuthData } from "../../interfaces/auth.interfaces";
-import { StyledForm } from "../../components/form/styled";
 import { StyledSection } from "./styled";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
+import { Form } from "../../components/form";
 
 export const Login = () => {
   const [loginData, setLoginData] = useState<IAuthData | null>(null);
@@ -37,15 +37,14 @@ export const Login = () => {
       <StyledAuthContainer>
         <img src="https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png" alt="Logo" />
 
-        <StyledForm onSubmit={handleLogin}>
-          <h1>Acesse sua conta</h1>
+        <Form title={"Acesse sua conta"} onSubmit={handleLogin}>
           <Input type="email" placeholder="email" value={email} onChange={handleEmail} />
 
           <Input type="password" placeholder="senha" value={password} onChange={handlePassword} />
 
           <Button type="submit" variant="primary" text="Entrar" />
           <a>Esqueceu sua senha ?!</a>
-        </StyledForm>
+        </Form>
 
         <StyledSection>
 
