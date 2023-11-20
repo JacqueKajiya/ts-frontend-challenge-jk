@@ -12,6 +12,7 @@ export const BtnContainer = styled.button<IButtonProps>`
   outline-color: var(--color-secondary);
   color: transparent;
   font-size: 16px;
+  font-weight: 500;
   
   padding: 0 20px;
   transition: 0ms.2s ease-in-out;
@@ -23,7 +24,7 @@ export const BtnContainer = styled.button<IButtonProps>`
       : width === "large"
       ? `318px`
       : `320px`};
-  height: ${({ height }) => (height === "medium" ? `40px` : `48px`)};
+  height: ${({ height }) => (height === "medium" ? `48px` : `40px`)};
 
   ${({ variant }) =>
     variant === "primary" &&

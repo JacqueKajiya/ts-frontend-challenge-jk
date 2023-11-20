@@ -4,6 +4,7 @@ import { IAuthData } from "../../interfaces/auth.interfaces";
 import { StyledForm } from "../../components/form/styled";
 import { StyledSection } from "./styled";
 import { Input } from "../../components/input";
+import { Button } from "../../components/button";
 
 export const Login = () => {
   const [loginData, setLoginData] = useState<IAuthData | null>(null);
@@ -42,11 +43,11 @@ export const Login = () => {
 
           <Input type="password" placeholder="senha" value={password} onChange={handlePassword} />
 
-          <button type="submit">Entrar</button>
+          <Button type="submit" variant="primary" text="Entrar" />
+          <a>Esqueceu sua senha ?!</a>
         </StyledForm>
 
         <StyledSection>
-          <a>Esqueceu sua senha ?!</a>
 
           <p>Ainda não tem conta?</p>
           <button><a href="">Cadastre-se</a></button>

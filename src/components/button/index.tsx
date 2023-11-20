@@ -1,10 +1,11 @@
+import { ButtonHTMLAttributes } from "react";
 import { BtnContainer } from "./styled";
 
-interface IButtonProps {
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   variant?: string;
 }
 
 export const Button = ({ text, variant, ...rest }: IButtonProps) => {
-  return <BtnContainer {...rest} variant={variant}>{text}</BtnContainer>;
+  return <BtnContainer variant={variant} {...rest}>{text}</BtnContainer>;
 };
