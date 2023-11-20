@@ -1,10 +1,9 @@
-import './App.css'
+import { Login } from './pages/loginPage'
 
 function App() {
 
   return (
-    <>
-    </>
+    <Login />
   )
 }
 

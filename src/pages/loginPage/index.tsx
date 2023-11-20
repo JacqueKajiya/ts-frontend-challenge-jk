@@ -1,26 +1,31 @@
-import { FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { StyledAuthBackground, StyledAuthContainer } from "../../styles/AuthBackground"
 import { IAuthData } from "../../interfaces/auth.interfaces";
+import { StyledForm } from "../../components/form/styled";
+import { StyledSection } from "./styled";
+import { Input } from "../../components/input";
 
-const Login = () => {
+export const Login = () => {
   const [loginData, setLoginData] = useState<IAuthData | null>(null);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch('https://front.evob.dev.marcomapa.com/front_challenge/info')
-        const result = await response.json();
-        setLoginData(result);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    fetch('https://front.evob.dev.marcomapa.com/front_challenge/info')
+      .then((response) => response.json())
+      .then((data) => setLoginData(data))
+      .catch((error) => console.error('Erro ao buscar informações:', error));
 
-    getData()
   }, []);
+
+  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }
+
+  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  }
 
   const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,20 +34,24 @@ const Login = () => {
   return (
     <StyledAuthBackground>
       <StyledAuthContainer>
-        <img src="" alt="Logo" />
+        <img src="https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png" alt="Logo" />
 
-        <form onSubmit={handleLogin}>
+        <StyledForm onSubmit={handleLogin}>
           <h1>Acesse sua conta</h1>
-          <input type="email" placeholder="email" required></input>
-          <input type="password" placeholder="senha" required></input>
+          <Input type="email" placeholder="email" value={email} onChange={handleEmail} />
 
-          <button type="submit">{loginData?.texts.section_login.login_call}</button>
-        </form>
+          <Input type="password" placeholder="senha" value={password} onChange={handlePassword} />
 
-        <a>{loginData?.texts.section_login.forgot}</a>
+          <button type="submit">Entrar</button>
+        </StyledForm>
 
-        <p>{loginData?.texts.section_login.register}</p>
-        <button><a href="">{loginData?.texts.section_login.registercall}</a></button>
+        <StyledSection>
+          <a>Esqueceu sua senha ?!</a>
+
+          <p>Ainda não tem conta?</p>
+          <button><a href="">Cadastre-se</a></button>
+        </StyledSection>
+
 
       </StyledAuthContainer>
     </StyledAuthBackground>
