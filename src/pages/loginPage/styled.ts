@@ -12,6 +12,15 @@ export const StyledBtnContainer = styled.div`
   justify-content: space-around;
 
   margin-top: 50px;
+
+  @media(min-width: 768px){
+    flex-direction: row-reverse;
+    margin-top: 0;
+
+    button{
+      width: 160px;
+    }
+  }
 `;
 
 export const StyledSection = styled.section`
@@ -33,27 +42,12 @@ export const StyledSection = styled.section`
   }
 
   @media (min-width: 768px){
-    max-width: 100%;
+    max-width: 320px;
     margin-top: 0;
-  }
-`;
 
-export const DesktopSize = styled.div`
-  width: 50%;
-  position: relative;
-  height: 720px;
-
-  background-image: url(${CoverImg});
-  background-size: cover;
-  background-position: center;
-
-  &::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #1A202C;
-    opacity: 0.9;
+    button{
+      width: 180px;
+    }
   }
 `;
 
@@ -97,7 +91,6 @@ export const TextContainer = styled.div`
   .second-paragraph{
     opacity: 0.5;
   }
-
 
 `;
 

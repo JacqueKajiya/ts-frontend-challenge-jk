@@ -33,7 +33,7 @@ export const StyledForm = styled.form`
 
   @media (min-width: 768px) {
     max-width: 100%;
-    /* height: 720px; */
+    padding: 0;
 
     header{
       display: flex;
