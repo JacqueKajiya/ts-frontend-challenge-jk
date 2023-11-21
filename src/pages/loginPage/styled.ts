@@ -40,10 +40,8 @@ export const StyledSection = styled.section`
 
 export const DesktopSize = styled.div`
   width: 50%;
-`;
-
-export const SectionOverlay = styled.section`
   position: relative;
+  height: 720px;
 
   background-image: url(${CoverImg});
   background-size: cover;
@@ -57,6 +55,50 @@ export const SectionOverlay = styled.section`
     background-color: #1A202C;
     opacity: 0.9;
   }
+`;
+
+export const SectionOverlay = styled.section`
+  width: 50%;
+  position: relative;
+  height: 720px;
+
+  background-image: url(${CoverImg});
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1A202C;
+    opacity: 0.9;
+  }
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  padding: 160px;
+  gap: 20px;
+
+  z-index: 1;
+
+  p{
+    font-size: 24px;
+    font-weight: lighter;
+    color: var(--color-white);
+  }
+
+  .second-paragraph{
+    opacity: 0.5;
+  }
+
+
 `;
 
 export const FormContainer = styled.div`

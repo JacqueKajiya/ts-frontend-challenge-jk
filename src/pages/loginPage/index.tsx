@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { StyledAuthBackground, StyledAuthContainer } from "../../styles/AuthBackground"
 import { IAuthData } from "../../interfaces/auth.interfaces";
-import { DesktopSize, FormContainer, SectionOverlay, StyledBtnContainer, StyledSection } from "./styled";
+import { DesktopSize, FormContainer, SectionOverlay, StyledBtnContainer, StyledSection, TextContainer } from "./styled";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { Form } from "../../components/form";
@@ -37,12 +37,15 @@ export const Login = () => {
     <StyledAuthBackground>
       <StyledAuthContainer>
 
-        <DesktopSize>
-          <SectionOverlay>
+        <SectionOverlay>
+          <TextContainer>
             <Logo url={"https://front.evob.dev.marcomapa.com/front_challenge/Tapttoo.png"} alt="Logo_Desktop" />
+            <p>O lugar certo para encontrar a sua próxima tatuagem</p>
+            <p className="second-paragraph">Descubra e siga seus tatuadores e estilos preferidos</p>
+            <p>Acesse!</p>
+          </TextContainer>
 
-          </SectionOverlay>
-        </DesktopSize>
+        </SectionOverlay>
 
         {/* <Logo url={"https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png"} alt="Logo_Mobile" /> */}
 

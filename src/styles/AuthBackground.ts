@@ -31,8 +31,6 @@ export const StyledAuthContainer = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-
-    border: 1px solid red;
   }
 
 `;
