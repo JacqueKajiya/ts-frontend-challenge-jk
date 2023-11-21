@@ -15,7 +15,8 @@ export const BtnContainer = styled.button<IButtonProps>`
   font-weight: 500;
   
   padding: 0 20px;
-  transition: 0ms.2s ease-in-out;
+  transition: 0.3s ease;
+
   width: ${({ width }) =>
     width === "small"
       ? `160px`
@@ -25,6 +26,7 @@ export const BtnContainer = styled.button<IButtonProps>`
       ? `318px`
       : `320px`};
   height: ${({ height }) => (height === "medium" ? `48px` : `40px`)};
+  cursor: pointer;
 
   ${({ variant }) =>
     variant === "primary" &&
@@ -37,20 +39,21 @@ export const BtnContainer = styled.button<IButtonProps>`
         background-color: var(--color-primary);
       }
 
-      :hover{
+      &:hover{
         opacity: 0.5;
       }
     `}
 
-    ${({ variant }) =>
-      variant === "secondary" &&
-      css`
-        background-color: var(--color-white);
-        color: var(--color-secondary);
+  ${({ variant }) =>
+    variant === "secondary" &&
+    css`
+      background-color: var(--color-white);
+      color: var(--color-secondary);
 
-        border: 1px solid var(--color-secondary);
-        :hover{
-          opacity: 0.5;
+      border: 1px solid var(--color-secondary);
+      
+      &:hover{
+        opacity: 0.5;
         }
       `}
 `;

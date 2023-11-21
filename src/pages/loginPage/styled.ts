@@ -15,15 +15,24 @@ export const StyledBtnContainer = styled.div`
 
   @media(min-width: 768px){
     flex-direction: row-reverse;
+    justify-content: space-between; 
     margin-top: 0;
 
     button{
       width: 160px;
     }
+
+    a{
+      transition: 0.3s ease;
+    }
+
+    a:hover{
+      border-bottom: 3px solid;
+    }
   }
 `;
 
-export const StyledSection = styled.section`
+export const LinkSection = styled.section`
   width: 100%;
   max-width: 322px;
   height: 96px;
@@ -44,14 +53,31 @@ export const StyledSection = styled.section`
   @media (min-width: 768px){
     max-width: 320px;
     margin-top: 0;
+  
+    a{
+      transition: 0.3s ease;
+    }
+
+    a:hover{
+      border-bottom: 3px solid;
+    }
 
     button{
       width: 180px;
     }
+
+  }
+`;
+
+export const LogoMobile = styled.div`
+  @media (min-width: 768px){
+    display: none;
   }
 `;
 
 export const SectionOverlay = styled.section`
+
+@media (min-width: 768px){
   width: 50%;
   position: relative;
   height: 720px;
@@ -69,7 +95,7 @@ export const SectionOverlay = styled.section`
     height: 100%;
     background-color: #1A202C;
     opacity: 0.9;
-  }
+  }}
 `;
 
 export const TextContainer = styled.div`
@@ -83,13 +109,13 @@ export const TextContainer = styled.div`
   z-index: 1;
 
   p{
-    font-size: 24px;
-    font-weight: lighter;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: var(--color-white);
   }
 
   .second-paragraph{
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
 `;

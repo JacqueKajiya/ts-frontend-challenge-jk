@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { StyledAuthBackground, StyledAuthContainer } from "../../styles/AuthBackground"
 import { IAuthData } from "../../interfaces/auth.interfaces";
-import { DesktopSize, FormContainer, SectionOverlay, StyledBtnContainer, StyledSection, TextContainer } from "./styled";
+import { FormContainer, LinkSection, LogoMobile, SectionOverlay, StyledBtnContainer, TextContainer } from "./styled";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { Form } from "../../components/form";
@@ -14,7 +14,13 @@ export const Login = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
-    fetch('https://front.evob.dev.marcomapa.com/front_challenge/info')
+    fetch('https://front.evob.dev.marcomapa.com/front_challenge/info', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': '*'
+      },
+    })
       .then((response) => response.json())
       .then((data) => setLoginData(data))
       .catch((error) => console.error('Erro ao buscar informações:', error));
@@ -47,7 +53,9 @@ export const Login = () => {
 
         </SectionOverlay>
 
-        {/* <Logo url={"https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png"} alt="Logo_Mobile" /> */}
+        <LogoMobile>
+          <Logo url={"https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png"} alt="Logo_Mobile" />
+        </LogoMobile>
 
         <FormContainer>
           <Form title={"Acesse sua conta"} onSubmit={handleLogin}>
@@ -61,10 +69,10 @@ export const Login = () => {
             </StyledBtnContainer>
           </Form>
 
-          <StyledSection>
+          <LinkSection>
             <a href="">Ainda não tem conta?</a>
             <Button variant="secondary" text="Cadastre-se" height="medium" />
-          </StyledSection>
+          </LinkSection>
         </FormContainer>
 
 
