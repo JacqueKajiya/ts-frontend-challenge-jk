@@ -99,23 +99,31 @@ export const SectionOverlay = styled.section`
 `;
 
 export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+    display: none;
+  
+  @media (min-width: 768px){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 
-  padding: 160px;
-  gap: 20px;
+    padding: 100px;
+    gap: 20px;
 
-  z-index: 1;
+    z-index: 1;
 
-  p{
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--color-white);
+    p{
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--color-white);
+    }
+
+    .second-paragraph{
+      opacity: 0.7;
+    }
   }
-
-  .second-paragraph{
-    opacity: 0.7;
+  @media (min-width: 1030px){
+    padding: 160px;
   }
 
 `;
