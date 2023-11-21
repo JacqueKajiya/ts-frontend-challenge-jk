@@ -48,6 +48,7 @@ export const BtnContainer = styled.button<IButtonProps>`
         background-color: var(--color-white);
         color: var(--color-secondary);
 
+        border: 1px solid var(--color-secondary);
         :hover{
           opacity: 0.5;
         }

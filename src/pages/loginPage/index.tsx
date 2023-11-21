@@ -1,10 +1,11 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { StyledAuthBackground, StyledAuthContainer } from "../../styles/AuthBackground"
 import { IAuthData } from "../../interfaces/auth.interfaces";
-import { StyledSection } from "./styled";
+import { DesktopSize, FormContainer, SectionOverlay, StyledBtnContainer, StyledSection } from "./styled";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { Form } from "../../components/form";
+import { Logo } from "../../components/logo";
 
 export const Login = () => {
   const [loginData, setLoginData] = useState<IAuthData | null>(null);
@@ -35,22 +36,33 @@ export const Login = () => {
   return (
     <StyledAuthBackground>
       <StyledAuthContainer>
-        <img src="https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png" alt="Logo" />
 
-        <Form title={"Acesse sua conta"} onSubmit={handleLogin}>
-          <Input type="email" placeholder="email" value={email} onChange={handleEmail} />
+        <DesktopSize>
+          <SectionOverlay>
+            <Logo url={"https://front.evob.dev.marcomapa.com/front_challenge/Tapttoo.png"} alt="Logo_Desktop" />
 
-          <Input type="password" placeholder="senha" value={password} onChange={handlePassword} />
+          </SectionOverlay>
+        </DesktopSize>
 
-          <Button type="submit" variant="primary" text="Entrar" />
-          <a>Esqueceu sua senha ?!</a>
-        </Form>
+        {/* <Logo url={"https://front.evob.dev.marcomapa.com/front_challenge/TapttooMobile.png"} alt="Logo_Mobile" /> */}
 
-        <StyledSection>
+        <FormContainer>
+          <Form title={"Acesse sua conta"} onSubmit={handleLogin}>
+            <Input type="email" placeholder="email" value={email} onChange={handleEmail} />
 
-          <p>Ainda não tem conta?</p>
-          <button><a href="">Cadastre-se</a></button>
-        </StyledSection>
+            <Input type="password" placeholder="senha" value={password} onChange={handlePassword} />
+
+            <StyledBtnContainer>
+              <Button type="submit" variant="primary" text="Entrar" />
+              <a href="">Esqueceu sua senha ?!</a>
+            </StyledBtnContainer>
+          </Form>
+
+          <StyledSection>
+            <a href="">Ainda não tem conta?</a>
+            <Button variant="secondary" text="Cadastre-se" height="medium" />
+          </StyledSection>
+        </FormContainer>
 
 
       </StyledAuthContainer>

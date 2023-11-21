@@ -6,15 +6,13 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Lato', sans-serif;
-  }
-
-  button{
-    cursor: pointer;
+    line-height: 1.5;
+    text-decoration: none;
   }
 
   body{
-    padding: 0 1rem;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
   }
 
   :root{
