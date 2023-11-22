@@ -7,6 +7,7 @@ export const StyledFieldSet = styled.fieldset`
   border: none;
 
   padding-top: 32px;
+  position: relative;
 
   input{
     width: 100%;
@@ -29,4 +30,13 @@ export const StyledFieldSet = styled.fieldset`
     font-size: 18px;
   }
 
+  span{
+    color: var(--negative);
+  }
+`;
+
+export const Icon = styled.img`
+  width: 20px;
+  position: absolute;
+  right: 0;
 `;

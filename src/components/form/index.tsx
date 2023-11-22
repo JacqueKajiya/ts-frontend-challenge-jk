@@ -1,5 +1,6 @@
 import { FormEvent } from "react";
 import { StyledForm } from "./styled";
+import { StyledBtnContainer } from "../../pages/loginPage/styled";
 
 interface IFormProps {
   title?: string;

@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const StyledAuthBackground = styled.div`
   width: 100%;
   max-width: 375px;
-  max-height: 1000px;
-  min-height: 100vh;
+  height: 1000px;
 
   background-color:  var(--color-white);
 
@@ -16,6 +15,7 @@ export const StyledAuthBackground = styled.div`
 
   @media (min-width: 768px) {
     max-width: 1280px;
+    min-height: 100vh;
     max-height: 720px;
 
     margin: 0 auto;
@@ -24,6 +24,7 @@ export const StyledAuthBackground = styled.div`
 
 export const StyledAuthContainer = styled.div`
   width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;

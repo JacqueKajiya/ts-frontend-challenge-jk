@@ -1,7 +1,77 @@
 import styled from "styled-components";
 import CoverImg from "../../assets/welcomeBackground.svg";
 
-export const StyledBtnContainer = styled.div`
+export const SectionOverlay = styled.section`
+  @media (min-width: 768px){
+    width: 50%;
+    position: relative;
+    height: 720px;
+
+    background-image: url(${CoverImg});
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #1A202C;
+      opacity: 0.9;
+    }
+  }
+`;
+
+export const TextContainer = styled.div`
+    display: none;
+  
+  @media (min-width: 768px){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    padding: 100px;
+    gap: 20px;
+
+    z-index: 1;
+
+    p{
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--color-white);
+    }
+
+    .second-paragraph{
+      opacity: 0.7;
+    }
+  }
+  @media (min-width: 1030px){
+    padding: 160px;
+  }
+`;
+
+export const LogoMobile = styled.div`
+  @media (min-width: 768px){
+    display: none;
+  }
+`;
+
+export const FormContainer = styled.div`
+  @media (min-width: 768px){
+    width: 50%;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const FormBtnContainer = styled.div`
   width: 100%;
   max-width: 320px;
   height: 80px;
@@ -34,7 +104,6 @@ export const StyledBtnContainer = styled.div`
 
 export const LinkSection = styled.section`
   width: 100%;
-  max-width: 322px;
   height: 96px;
 
   display: flex;
@@ -42,7 +111,7 @@ export const LinkSection = styled.section`
   align-items: center;
   justify-content: space-around;
 
-  margin-top: 163px;
+  margin-top: 30px;
 
   a{
     color: var(--color-secondary);
@@ -66,76 +135,5 @@ export const LinkSection = styled.section`
       width: 180px;
     }
 
-  }
-`;
-
-export const LogoMobile = styled.div`
-  @media (min-width: 768px){
-    display: none;
-  }
-`;
-
-export const SectionOverlay = styled.section`
-
-@media (min-width: 768px){
-  width: 50%;
-  position: relative;
-  height: 720px;
-
-  background-image: url(${CoverImg});
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-
-  &::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #1A202C;
-    opacity: 0.9;
-  }}
-`;
-
-export const TextContainer = styled.div`
-    display: none;
-  
-  @media (min-width: 768px){
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-
-    padding: 100px;
-    gap: 20px;
-
-    z-index: 1;
-
-    p{
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--color-white);
-    }
-
-    .second-paragraph{
-      opacity: 0.7;
-    }
-  }
-  @media (min-width: 1030px){
-    padding: 160px;
-  }
-
-`;
-
-export const FormContainer = styled.div`
-  @media (min-width: 768px){
-    width: 50%;
-    height: 720px;
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
   }
 `;
